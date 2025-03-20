@@ -7,6 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const PORT = process.env.PORT||3000;
 
 const db = mysql.createConnection({
     host:"localhost",
@@ -62,7 +63,7 @@ app.post("/registers",(req,res) =>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server running at port:3000....")
 })
 
